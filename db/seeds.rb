@@ -9,11 +9,11 @@
 Book.destroy_all
 Author.destroy_all
 
-muir = Artist.create!(name: 'Tamsyn Muir', alive: true, hometown: 'Howick, New Zealand')
+muir = Artist.create!(name: 'Tamsyn Muir', alive: true, hometown: 'Howick, New Zealand', age_published: 34)
 
-king = Artist.create!(name: 'Stephen King', alive: true, hometown: 'Portland, Maine, USA')
+king = Artist.create!(name: 'Stephen King', alive: true, hometown: 'Portland, Maine, USA', age_published: 26)
 
-chupeco = Artist.create!(name: 'Rin Chupeco', alive: true, hometown: 'Manila, Philippines')
+chupeco = Artist.create!(name: 'Rin Chupeco', alive: true, hometown: 'Manila, Philippines', age_published: 30)
 
 muir.books.create!(name: 'Gideon the Ninth', publish_date: 2019-09-10, pages: 448, in_series: true)
 muir.books.create!(name: 'Harrow the Ninth', publish_date: 2020-08-04, pages: 552, in_series: true)
