@@ -252,8 +252,72 @@
           1,
           null
         ]
+      },
+      "/Users/jackalope/turing/2-mod/projects/relational_rails/spec/features/books/show_spec.rb": {
+        "lines": [
+
+        ]
+      },
+      "/Users/jackalope/turing/2-mod/projects/relational_rails/spec/models/author_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          2,
+          null
+        ]
+      },
+      "/Users/jackalope/turing/2-mod/projects/relational_rails/app/models/author.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/jackalope/turing/2-mod/projects/relational_rails/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/jackalope/turing/2-mod/projects/relational_rails/spec/models/book_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          2,
+          null
+        ]
+      },
+      "/Users/jackalope/turing/2-mod/projects/relational_rails/app/models/book.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/jackalope/turing/2-mod/projects/relational_rails/app/controllers/books_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/jackalope/turing/2-mod/projects/relational_rails/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1670111827
+    "timestamp": 1670138096
   }
 }
