@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   
   get '/books', to: 'books#index'
   get '/authors', to: 'authors#index'
-  # get '/authors/:author_id/books', to: 'author_books#index'
+  get '/authors/:id', to: 'authors#show'
 end

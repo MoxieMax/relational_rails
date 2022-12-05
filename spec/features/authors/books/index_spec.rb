@@ -13,5 +13,7 @@ RSpec.describe 'Artists songs index' do
     
     expect(page).to have_content(gideon.title)
     expect(page).to have_content(harrow.title)
+    expect(page).to have_content(nona.title)
+    expect(page).to have_content(flora.title)
   end
 end
