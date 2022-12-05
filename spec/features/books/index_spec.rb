@@ -12,5 +12,7 @@ RSpec.describe 'Artists songs index' do
     visit "/books"
     
     expect(page).to have_content(gideon.title)
+    expect(page).to have_content(gideon.pages)
+    expect(page).to have_content(gideon.publish_date)
   end
 end
