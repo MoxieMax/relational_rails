@@ -1,17 +1,16 @@
 require 'rails_helper'
 
-RSpec.describe 'Artists songs index' do
+RSpec.describe 'Authors index' do
   
-  it 'shows all of the titles of the songs for the artist' do
+  it 'shows all authors' do
     muir = Author.create!(name: 'Tamsyn Muir', alive: true, hometown: 'Howick, New Zealand', age_published: 34)
-    gideon = muir.books.create!(title: 'Gideon the Ninth', publish_date: '2019-09-10', pages: 448, in_series: true)
-    harrow = muir.books.create!(title: 'Harrow the Ninth', publish_date: '2020-08-04', pages: 552, in_series: true)
-    nona = muir.books.create!(title: 'Nona the Ninth', publish_date: '2022-09-13', pages: 480, in_series: true)
-    flora = muir.books.create!(title: 'Princess Floralinda and the Forty-Flight Tower', publish_date: '2020-11-30', pages: 146, in_series: false)
+    king = Author.create!(name: 'Stephen King', alive: true, hometown: 'Portland, Maine, USA', age_published: 26)
+    chupeco = Author.create!(name: 'Rin Chupeco', alive: true, hometown: 'Manila, Philippines', age_published: 30)
     
-    visit "/books"
+    visit "/authors"
     
     expect(page).to have_content(muir.name)
-    expect(page).to have_content(muir.books)
+    expect(page).to have_content(king.name)
+    expect(page).to have_content(chupeco.name)
   end
 end
