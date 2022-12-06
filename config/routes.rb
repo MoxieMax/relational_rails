@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   get '/authors/new', to: 'authors#new'
   get '/authors/:id', to: 'authors#show'
   get '/authors/:id/books', to: 'author_books#index'
+  
+  post 'authors', to: 'authors#create'
 
 end

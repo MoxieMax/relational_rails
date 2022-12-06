@@ -13,6 +13,7 @@ RSpec.describe 'the Author creation' do
 
     fill_in('Name', with: 'Richelle Mead')
     fill_in('Alive', with: true)
+    fill_in('Hometown', with: 'Kirkland, WA')
     fill_in('Age First Published', with: 31)
     click_button('Create Author')
 
