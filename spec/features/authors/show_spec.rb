@@ -2,19 +2,38 @@ require 'rails_helper'
 
 RSpec.describe 'Authors show' do
   before do
-    @author = Author.create!(name: 'Tamsyn Muir', alive: true, hometown: 'Howick, New Zealand', age_published: 34)
+    @muir = Author.create!(name: 'Tamsyn Muir', 
+                            alive: true, 
+                            hometown: 'Howick, New Zealand', 
+                            age_published: 34)
+    @gideon = @muir.books.create!(title: 'Gideon the Ninth', 
+                                  publish_date: '2019-09-10', 
+                                  pages: 448, 
+                                  in_series: true)
+    @harrow = @muir.books.create!(title: 'Harrow the Ninth', 
+                                  publish_date: '2020-08-04', 
+                                  pages: 552, 
+                                  in_series: true)
+    @nona = @muir.books.create!(title: 'Nona the Ninth', 
+                                  publish_date: '2022-09-13', 
+                                  pages: 480, 
+                                  in_series: true)
+    @flora = @muir.books.create!(title: 'Princess Floralinda and the Forty-Flight Tower', 
+                                  publish_date: '2020-11-30', 
+                                  pages: 146, 
+                                  in_series: false)
     
-    visit "/authors/#{@author.id}"
+    visit "/authors/#{@muir.id}"
   end
   
   it 'shows all authors' do
-    expect(page).to have_content(@author.name)
-    expect(page).to have_content(@author.alive)
-    expect(page).to have_content(@author.hometown)
-    expect(page).to have_content(@author.age_published)
+    expect(page).to have_content(@muir.name)
+    expect(page).to have_content(@muir.alive)
+    expect(page).to have_content(@muir.hometown)
+    expect(page).to have_content(@muir.age_published)
   end
   
-  # xit '' do
-  # 
-  # end
+  xit 'displays the authors book count' do
+    expect()
+  end
 end
