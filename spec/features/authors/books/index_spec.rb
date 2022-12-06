@@ -3,11 +3,26 @@ require 'rails_helper'
 RSpec.describe 'Authors books index' do
   
   before do
-    @muir = Author.create!(name: 'Tamsyn Muir', alive: true, hometown: 'Howick, New Zealand', age_published: 34)
-    @gideon = @muir.books.create!(title: 'Gideon the Ninth', publish_date: '2019-09-10', pages: 448, in_series: true)
-    @harrow = @muir.books.create!(title: 'Harrow the Ninth', publish_date: '2020-08-04', pages: 552, in_series: true)
-    @nona = @muir.books.create!(title: 'Nona the Ninth', publish_date: '2022-09-13', pages: 480, in_series: true)
-    @flora = @muir.books.create!(title: 'Princess Floralinda and the Forty-Flight Tower', publish_date: '2020-11-30', pages: 146, in_series: false)
+    @muir = Author.create!(name: 'Tamsyn Muir', 
+                          alive: true, 
+                          hometown: 'Howick, NZ', 
+                          age_published: 34)
+    @gideon = @muir.books.create!(title: 'Gideon the Ninth', 
+                                  publish_date: '2019-09-10', 
+                                  pages: 448, 
+                                  in_series: true)
+    @harrow = @muir.books.create!(title: 'Harrow the Ninth', 
+                                  publish_date: '2020-08-04', 
+                                  pages: 552, 
+                                  in_series: true)
+    @nona = @muir.books.create!(title: 'Nona the Ninth', 
+                                publish_date: '2022-09-13', 
+                                pages: 480, 
+                                in_series: true)
+    @flora = @muir.books.create!(title: 'Princess Floralinda and the Forty-Flight Tower', 
+                                publish_date: '2020-11-30', 
+                                pages: 146, 
+                                in_series: false)
   end
   
   describe 'index exists' do
@@ -40,8 +55,10 @@ RSpec.describe 'Authors books index' do
   describe 'includes the option to add more books' do
     it 'has a button to create new books' do
       visit "/authors/#{@muir.id}/books"
+      save_and_open_page
+      click_button 'Create Book'
       
-      expect(page).to have_ccurrent_path("/authors/#{@muir.id}/books/new")
+      expect(page).to have_current_path("/authors/#{@muir.id}/books/new")
       
     end
   end

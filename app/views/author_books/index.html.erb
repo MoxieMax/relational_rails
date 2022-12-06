@@ -6,3 +6,5 @@
   <p>Pages: <%= book.pages %></p>
   <p>In Series: <%= book.in_series %></p>
 <% end %>
+
+<%= link_to "Create Book", "/authors/#{@author.id}/books/new" %>
