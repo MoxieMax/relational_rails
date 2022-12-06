@@ -3,3 +3,5 @@
 <p>Hometown: <%= @author.hometown %></p>
 <p>Age First Published: <%= @author.age_published %></p>
 <p>Total Books: <%= @author.total_books %></p>
+<br>
+<h4><%= link_to "#{@author.name}'s Books", "/authors/#{@author.id}/books"%></h4>

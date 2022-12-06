@@ -36,4 +36,9 @@ RSpec.describe 'Authors show' do
   it 'displays the authors book count' do
     expect(page).to have_content("Total Books: #{@muir.total_books}")
   end
+  
+  it 'has a link to their books' do
+    click_on "#{@muir.name}'s Books"
+    expect(page).to have_current_path("/authors/#{@muir.id}/books")
+  end
 end
