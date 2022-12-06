@@ -10,28 +10,40 @@ RSpec.describe 'Authors books index' do
     @flora = @muir.books.create!(title: 'Princess Floralinda and the Forty-Flight Tower', publish_date: '2020-11-30', pages: 146, in_series: false)
   end
   
-  it 'shows all of the titles of the books for the author' do
-    
-    visit "/authors/#{@muir.id}/books"
-    
-    expect(page).to have_content(@gideon.title)
-    expect(page).to have_content(@harrow.title)
-    expect(page).to have_content(@nona.title)
-    expect(page).to have_content(@flora.title)
-    
-    expect(page).to have_content(@gideon.publish_date)
-    expect(page).to have_content(@harrow.publish_date)
-    expect(page).to have_content(@nona.publish_date)
-    expect(page).to have_content(@flora.publish_date)
-    
-    expect(page).to have_content(@gideon.pages)
-    expect(page).to have_content(@harrow.pages)
-    expect(page).to have_content(@nona.pages)
-    expect(page).to have_content(@flora.pages)
-    
-    expect(page).to have_content(@gideon.in_series)
-    expect(page).to have_content(@harrow.in_series)
-    expect(page).to have_content(@nona.in_series)
-    expect(page).to have_content(@flora.in_series)
+  describe 'index exists' do
+    it 'shows all of the titles of the books for the author' do
+      
+      visit "/authors/#{@muir.id}/books"
+      
+      expect(page).to have_content(@gideon.title)
+      expect(page).to have_content(@harrow.title)
+      expect(page).to have_content(@nona.title)
+      expect(page).to have_content(@flora.title)
+      
+      expect(page).to have_content(@gideon.publish_date)
+      expect(page).to have_content(@harrow.publish_date)
+      expect(page).to have_content(@nona.publish_date)
+      expect(page).to have_content(@flora.publish_date)
+      
+      expect(page).to have_content(@gideon.pages)
+      expect(page).to have_content(@harrow.pages)
+      expect(page).to have_content(@nona.pages)
+      expect(page).to have_content(@flora.pages)
+      
+      expect(page).to have_content(@gideon.in_series)
+      expect(page).to have_content(@harrow.in_series)
+      expect(page).to have_content(@nona.in_series)
+      expect(page).to have_content(@flora.in_series)
+    end
   end
+  
+  describe 'includes the option to add more books' do
+    it 'has a button to create new books' do
+      visit "/authors/#{@muir.id}/books"
+      
+      expect(page).to have_ccurrent_path("/authors/#{@muir.id}/books/new")
+      
+    end
+  end
+  
 end
