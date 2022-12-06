@@ -33,7 +33,7 @@ RSpec.describe 'Authors show' do
     expect(page).to have_content(@muir.age_published)
   end
   
-  xit 'displays the authors book count' do
-    expect()
+  it 'displays the authors book count' do
+    expect(page).to have_content(@muir.total_books)
   end
 end
