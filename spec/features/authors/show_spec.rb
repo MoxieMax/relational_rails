@@ -35,7 +35,5 @@ RSpec.describe 'Authors show' do
   
   it 'displays the authors book count' do
     expect(page).to have_content("Total Books: #{@muir.total_books}")
-    
-    # binding.pry
   end
 end
