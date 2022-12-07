@@ -31,17 +31,19 @@ RSpec.describe 'Author creation' do
     it 'has a fillable form to create a new book' do
       visit "/authors/#{@muir.id}/books/new"
       
-      fill_in 'title', with: 'Princess Floralinda and the Forty-Flight Tower'
-      fill_in 'publish_date', with: '2020-11-30'
-      fill_in 'pages', with: 146
+      fill_in 'title', with: 'Alecto the Ninth'
+      fill_in 'publish_date', with: '2023-11-30'
+      fill_in 'pages', with: 500
+      check 'in_series'
       
       click_button('Create Book')
       
+      save_and_open_page
+      
       expect(current_path).to eq("/authors/#{@muir.id}/books")
-      expect(page).to have_content(@flora.title)
-      expect(page).to have_content(@flora.publish_date)
-      expect(page).to have_content(@flora.length)
-      expect(@flora.in_series).to eq(false)
+      expect(page).to have_content('Alecto the Ninth')
+      expect(page).to have_content('2023-11-30')
+      expect(page).to have_content(500)
     end
   end
 end

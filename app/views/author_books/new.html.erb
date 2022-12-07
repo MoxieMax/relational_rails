@@ -1,5 +1,5 @@
 <h2> Create Book </h2>
-<%= form_with url: '/authors/:id/books', method: :post, local: true do |form| %>
+<%= form_with url: "/authors/#{@authors.id}/books", method: :post, local: true do |form| %>
 
   <%= form.label :title %>
   <%= form.text_field :title %><br>
