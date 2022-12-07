@@ -38,8 +38,6 @@ RSpec.describe 'Author creation' do
       
       click_button('Create Book')
       
-      save_and_open_page
-      
       expect(current_path).to eq("/authors/#{@muir.id}/books")
       expect(page).to have_content('Alecto the Ninth')
       expect(page).to have_content('2023-11-30')
