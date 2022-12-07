@@ -7,8 +7,6 @@ RSpec.describe 'Authors index' do
     @chupeco = Author.create!(name: 'Rin Chupeco', alive: true, hometown: 'Manila, Philippines', age_published: 30)
     
     visit "/authors"
-    
-    save_and_open_page
   end
   
   it 'shows all authors' do

@@ -11,12 +11,10 @@ RSpec.describe 'Author Update' do
                                   pages: 448, 
                                   in_series: true)
   end
-  visit 
-  
-  it 'can create a new author' do
+  it 'can update book info' do
     visit "/books/#{@gideon.id}/edit"
       
-    fill_in 'Title', with: 'Gideon the Ninth'
+    fill_in 'title', with: 'Gideon the Ninth'
     fill_in 'publish_date', with: '2019-09-10'
     fill_in 'pages', with: 450
     check 'in_series'
@@ -24,5 +22,8 @@ RSpec.describe 'Author Update' do
     click_button('Update Book')
     
     expect(current_path).to eq("/books/#{@gideon.id}")
+    
+    visit "/books/#{@gideon.id}"
+    expect(page).to have_content(450)
   end
 end

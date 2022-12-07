@@ -55,11 +55,9 @@ RSpec.describe 'Authors books index' do
   describe 'includes the option to add more books' do
     it 'has a button to create new books' do
       visit "/authors/#{@muir.id}/books"
-      save_and_open_page
-      click_button 'Create Book'
+      click_on 'Create Book'
       
       expect(page).to have_current_path("/authors/#{@muir.id}/books/new")
-      
     end
   end
   

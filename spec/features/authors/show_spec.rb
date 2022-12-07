@@ -46,6 +46,6 @@ RSpec.describe 'Authors show' do
   it 'has a link to update author information' do
     click_on 'Update Author'
     
-    expect(page).to have_current_path("/authors/#{@muir.id}/edit"
+    expect(page).to have_current_path("/authors/#{@muir.id}/edit")
   end
 end
