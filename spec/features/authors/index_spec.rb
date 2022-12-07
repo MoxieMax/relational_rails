@@ -22,4 +22,12 @@ RSpec.describe 'Authors index' do
     expect(page).to have_content(@king.created_at)
     expect(page).to have_content(@chupeco.created_at)
   end
+  
+  xit 'new author button exists and is clickable' do
+    visit '/authors/new'
+
+    click_button('New Author')
+
+    expect(current_path).to eq('/authors/new')
+  end
 end

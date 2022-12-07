@@ -5,3 +5,5 @@
 <p>Total Books: <%= @author.total_books %></p>
 <br>
 <h4><%= link_to "#{@author.name}'s Books", "/authors/#{@author.id}/books"%></h4>
+
+<h5><%= link_to "Update Author", "/authors/#{@author.id}/edit"%></h5>
