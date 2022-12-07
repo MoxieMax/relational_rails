@@ -2,3 +2,5 @@
 <p>Published: <%= @book.publish_date %></p>
 <p>Pages: <%= @book.pages %></p>
 <p>In Series: <%= @book.in_series %></p>
+
+<h5><%= link_to "Update Book", "/books/#{@book.id}/edit"%></h5>
