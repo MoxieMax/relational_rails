@@ -19,5 +19,6 @@ RSpec.describe 'Author Update' do
     click_button('Update Author')
     
     expect(current_path).to eq("/authors/#{@muir.id}")
+    expect(page).to have_content('Oxford, England, UK')
   end
 end
